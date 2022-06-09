@@ -1,0 +1,44 @@
+.listing-item-holder {
+  max-width: 300px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.listing-photos {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.listing-item-title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 0.25rem 0;
+}
+
+.listing-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.listing-details-holder {
+  display: flex;
+  letter-spacing: 0;
+}
+
+.listing-detail {
+  margin-right: 0.75rem;
+  text-align: center;
+}
+
+.listing-detail div:nth-of-type(2) {
+  opacity: 0.3;
+  font-size: 10px;
+}
+
+.listing-price {
+  font-size: 16px;
+}

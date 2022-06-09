@@ -1,0 +1,26 @@
+#listings-title {
+  width: min-content;
+  margin: 3rem;
+  padding: 1rem 1rem 4rem 1rem;
+  height: min-content;
+  border: 1px solid var(--black);
+}
+
+#listings-holder {
+  display: flex;
+  justify-content: center;
+}
+
+#listings-page {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#listings-items-container {
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 40px;
+  row-gap: 40px;
+}

@@ -1,0 +1,75 @@
+#process-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#process-page #hero-holder {
+  max-height: 400px;
+}
+
+#process-body {
+  padding: 40px;
+  max-width: 1200px;
+  min-width: 780px;
+}
+
+#process-tabs {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.process-tab {
+  margin-left: 40px;
+  font-weight: 100;
+  font-family: "PT Sans", sans-serif;
+}
+
+.process-tab a {
+  opacity: 0.5;
+  padding: 5px 5px;
+  border-radius: 0;
+  letter-spacing: 1px;
+  border: 1px solid transparent !important;
+}
+
+.process-cards-holder {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.process-card {
+  width: 300px;
+  font-family: "PT Sans", sans-serif;
+  padding: 40px;
+  position: relative;
+  background: #d4b49591;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.process-card-body {
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+.process-card-title {
+  text-transform: capitalize;
+  font-weight: 900;
+  padding-bottom: 20px;
+  max-width: 75%;
+  font-family: "PT Serif", serif;
+}
+
+.process-card svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  width: 30px;
+  height: 30px;
+}

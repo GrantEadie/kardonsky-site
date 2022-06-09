@@ -1,0 +1,34 @@
+#hero-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: max-content;
+  max-height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.home {
+  min-height: 840px;
+}
+
+#hero-text {
+  font-family: "Rufina", serif;
+  text-align: center;
+  position: absolute;
+}
+
+#hero-title {
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+#hero-desc {
+  font-family: "PT Serif", serif;
+}
+
+#hero-img {
+  width: 100%;
+  opacity: 0.3;
+}

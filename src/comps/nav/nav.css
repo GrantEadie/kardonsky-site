@@ -1,0 +1,39 @@
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(246, 245, 241, 0.5);
+  align-items: center;
+  font-family: "Rufina", serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+#nav-items-holder {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-item {
+  margin-left: 3rem;
+}
+
+.nav-logo {
+  font-weight: 900;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.nav-item a {
+  border: 1px solid transparent;
+  padding: 5px 0;
+}
+
+.active {
+  border-bottom: 1px solid var(--black) !important;
+  font-weight: 900;
+  opacity: 1 !important;
+}
