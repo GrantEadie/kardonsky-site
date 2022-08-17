@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import About from "./about/About";
 import Blog from "./blog/Blog";
 import Contact from "./contact/Contact";
-import Listings from "./listings/Listings";
+import ListingPage from "./listings/ListingPage";
 import Process from "./process/Process";
 import Home from "./home/Home";
 import App from "./App";
@@ -46,7 +46,7 @@ function RouterWrapper() {
           <Route path="/about-me" element={<About />} />s
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/listings" element={<Listings />} />
+          <Route path="/listings" element={<ListingPage />} />
           <Route path="/the-process" element={<Process />}>
             <Route path="" index element={<Buyers />} />
             <Route path="buyers" element={<Buyers />} />

@@ -1,4 +1,4 @@
-import Listings from "../listings/Listings";
+import ListingsBody from "../listings/ListingsBody";
 import "./home.css";
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
           <div id="hero-title">Start living your Methow dream</div>
         </div>
       </div>
-      <Listings />
+      <ListingsBody />
     </div>
   );
 };

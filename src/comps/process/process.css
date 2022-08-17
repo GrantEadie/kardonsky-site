@@ -6,7 +6,8 @@
 }
 
 #process-page #hero-holder {
-  max-height: 400px;
+  min-height: unset !important;
+  max-height: 400px !important;
 }
 
 #process-body {

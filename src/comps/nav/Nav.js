@@ -8,7 +8,11 @@ const Nav = () => {
   return (
     <div
       id="nav-bar"
-      className={location.pathname === "/blog" ? "nav-black" : null}
+      className={
+        location.pathname === "/blog" || location.pathname === "/listings"
+          ? "nav-black"
+          : null
+      }
     >
       <div className="nav-logo">
         <NavLink to="/">valerie kardonsky</NavLink>

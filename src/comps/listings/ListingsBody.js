@@ -1,11 +1,11 @@
-import "./listings.css";
+import "./listings-body.css";
 import { sampleData } from "../../sample-data.js";
 import ListingItem from "./listing-item/ListingItem";
 
-const Listings = () => {
+const ListingsBody = () => {
   return (
     <div id="listings-holder">
-      <div id="listings-page">
+      <div id="listings-body">
         <div id="listings-title">featured properties</div>
         <div id="listings-items-container">
           {sampleData.map((data, index) => (
@@ -17,4 +17,4 @@ const Listings = () => {
   );
 };
 
-export default Listings;
+export default ListingsBody;
