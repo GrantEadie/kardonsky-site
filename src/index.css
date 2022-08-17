@@ -5,9 +5,10 @@ font-family: 'PT Serif', serif;
 font-family: 'Rufina', serif; */
 
 :root {
-  --black: #0f122b;
+  --black: #0b0c1a;
   --white: #f6f5f1;
-  --dark-red: #62373D;
+  --dark-red: #62373d;
+  --tan: #f0d7bd75;
 }
 
 html {
@@ -21,7 +22,7 @@ body {
 }
 
 * {
-  border-radius: 2px; 
+  border-radius: 2px;
 }
 
 a {
@@ -31,18 +32,18 @@ a {
 
 button {
   padding: 0.5rem 1rem;
-  border: 1px solid var(--black);
+  border: 1px solid var(--white);
   cursor: pointer;
   background: transparent;
-  color: var(--black);
+  color: var(--white);
   font-family: inherit;
   font-size: inherit;
 }
 
-button:hover * {
-  color: var(--white);
+button:hover a {
+  color: var(--black);
 }
 
 button:hover {
-  background: var(--black);
+  background: var(--white);
 }

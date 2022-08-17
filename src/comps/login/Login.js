@@ -7,9 +7,9 @@ import {
 import { useState, useEffect } from "react";
 import { app } from "../../firebase";
 import "./login.css";
+import { Lock, LockOpen } from "phosphor-react";
 
-function Login() {
-  const [user, setUser] = useState({});
+function Login({ user, setUser, handleLogout }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,33 +18,12 @@ function Login() {
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        console.log("successful login");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorMessage);
-      });
-  };
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user.email);
-      } else {
-        console.log("SIGNED OUT");
-      }
-    });
-  }, [user, setUser]);
-
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        console.log("sign out successful");
-        setUser("");
-      })
-      .catch((error) => {
-        console.log(error);
+        console.log(errorCode, errorMessage);
       });
   };
 
@@ -52,25 +31,31 @@ function Login() {
     <div id="login-backdrop">
       <div id="login-holder">
         <div id="login">
-          <div id="login-header">Admin Account Access</div>
-          <input
-            type="email"
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="password"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
           {user ? (
             <>
+              <LockOpen size={32} weight="fill" />
+              <div id="login-header">
+                Valerie Kardonsky <span>Admin Account Access</span>
+              </div>
               <button onClick={() => handleLogout()}>Logout</button>
               <span id="logged-in">you are currently logged in.</span>
             </>
           ) : (
             <>
+              <Lock size={32} weight="fill" />
+              <div id="login-header">
+                Valerie Kardonsky <span>Admin Account Access</span>
+              </div>
+              <input
+                type="email"
+                placeholder="email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
               <button onClick={() => handleLogin()}>Login</button>
               <span id="logged-out">you are currently logged out.</span>
             </>

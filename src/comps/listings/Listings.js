@@ -6,7 +6,7 @@ const Listings = () => {
   return (
     <div id="listings-holder">
       <div id="listings-page">
-        <div id="listings-title">featured homes</div>
+        <div id="listings-title">featured properties</div>
         <div id="listings-items-container">
           {sampleData.map((data, index) => (
             <ListingItem data={data} key={index} />

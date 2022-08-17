@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
 import About from "./about/About";
 import Blog from "./blog/Blog";
 import Contact from "./contact/Contact";
@@ -8,14 +10,38 @@ import Home from "./home/Home";
 import App from "./App";
 import Buyers from "./process/buyers/Buyers";
 import Sellers from "./process/sellers/Sellers";
-import MarketTrends from "./process/market-trends/MarketTrends";
-import Login from "./login/Login"
+import Login from "./login/Login";
+import { signOut } from "firebase/auth";
 
 function RouterWrapper() {
+  const [user, setUser] = useState("");
+  const auth = getAuth();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user.email);
+      } else {
+        console.log("SIGNED OUT");
+      }
+    });
+  }, [user, setUser, auth]);
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("sign out successful");
+        setUser("");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="/" element={<App user={user} handleLogout={handleLogout}/>}>
           <Route index element={<Home />} />
           <Route path="/about-me" element={<About />} />s
           <Route path="/blog" element={<Blog />} />
@@ -25,9 +51,11 @@ function RouterWrapper() {
             <Route path="" index element={<Buyers />} />
             <Route path="buyers" element={<Buyers />} />
             <Route path="sellers" element={<Sellers />} />
-            <Route path="market-trends" element={<MarketTrends />} />
           </Route>
-          <Route path="/admin" element={<Login />} />
+          <Route
+            path="/admin"
+            element={<Login user={user} setUser={setUser} handleLogout={handleLogout}/>}
+          />
         </Route>
       </Routes>
     </Router>

@@ -1,9 +1,15 @@
 import "./nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Nav = () => {
+  let location = useLocation();
+  console.log(location);
+
   return (
-    <div id="nav-bar">
+    <div
+      id="nav-bar"
+      className={location.pathname === "/blog" ? "nav-black" : null}
+    >
       <div className="nav-logo">
         <NavLink to="/">valerie kardonsky</NavLink>
       </div>

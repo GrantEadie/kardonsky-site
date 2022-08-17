@@ -24,9 +24,6 @@ const Process = () => {
             <div className="process-tab">
               <NavLink to="sellers">sellers</NavLink>
             </div>
-            <div className="process-tab">
-              <NavLink to="market-trends">market trends</NavLink>
-            </div>
           </div>
           <div className="process-cards-holder">
             <Outlet />

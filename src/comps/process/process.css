@@ -17,11 +17,10 @@
 
 #process-tabs {
   display: flex;
-  justify-content: flex-end;
 }
 
 .process-tab {
-  margin-left: 40px;
+  margin-right: 40px;
   font-weight: 100;
   font-family: "PT Sans", sans-serif;
 }
@@ -32,6 +31,7 @@
   border-radius: 0;
   letter-spacing: 1px;
   border: 1px solid transparent !important;
+  font-size: 1.3rem;
 }
 
 .process-cards-holder {
@@ -47,7 +47,7 @@
   font-family: "PT Sans", sans-serif;
   padding: 40px;
   position: relative;
-  background: #d4b49591;
+  background: var(--tan);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
