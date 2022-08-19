@@ -1,32 +1,33 @@
+import {useState} from 'react';
 import "./process.css";
-import { NavLink, Outlet } from "react-router-dom";
+import Buyers from './buyers/Buyers';
+import Sellers from './sellers/Sellers';
+
+
 
 const Process = () => {
+  const [seller, setSeller] = useState(false);
   return (
     <div id="process-page-holder">
       <div id="process-page">
-        <div id="hero-holder">
+        <div className="page-header-container">
           <img
-            id="hero-img"
-            src="https://images.unsplash.com/photo-1567582701587-c148165275ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80"
+            className="page-header-img"
+            src="https://images.unsplash.com/photo-1521488357999-ff03ac2b5fd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
             alt="hero-page"
           />
-          <div id="hero-text">
-            <div id="hero-title">The Process</div>
-            <div id="hero-desc">Here's how it all comes together.</div>
+          <div className="page-header-text">
+            <h2>here's how it all comes together</h2>
+            <h1>the process</h1>
+            <div className="page-header-buttons">
+              <button className={!seller ? "selected" : null} onClick={() => setSeller(false)}>buyers</button>
+              <button className={seller ? "selected" : null} onClick={() => setSeller(true)}>sellers</button>
+            </div>
           </div>
         </div>
         <div id="process-body">
-          <div id="process-tabs">
-            <div className="process-tab">
-              <NavLink to="buyers">buyers</NavLink>
-            </div>
-            <div className="process-tab">
-              <NavLink to="sellers">sellers</NavLink>
-            </div>
-          </div>
           <div className="process-cards-holder">
-            <Outlet />
+            {seller ? <Sellers /> : <Buyers />}
           </div>
         </div>
       </div>

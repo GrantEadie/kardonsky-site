@@ -5,10 +5,11 @@ function Buyers() {
     <>
       {buyerData.map((card, index) => (
         <div className="process-card" key={index}>
-          {card.icon}
-          <div className="process-card-title">{card.title}</div>
-          <div className="process-card-body">{card.body}</div>
+        <div className="process-card-title">
+          <span>{card.title}</span> {card.icon}
         </div>
+        <div className="process-card-body">{card.body}</div>
+      </div>
       ))}
     </>
   );

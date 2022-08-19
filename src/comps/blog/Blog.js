@@ -6,10 +6,13 @@ const Blog = () => {
   return (
     <div id="blog-holder">
       <div id="blog">
-        <div id="blog-header">
-          {/* <img src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2FValerieKardonsky3.jpg?alt=media&token=1bdcd7c0-4463-45a4-a059-7cda1f0047a4" alt="valerie kardonsky headshot"/> */}
-          <h2>what I've been up to</h2>
-          <h1>my blog</h1>
+        <div
+          className="page-header-container no-img"
+        >
+          <div className="page-header-text">
+            <h2>what I've been up to</h2>
+            <h1>my blog</h1>
+          </div>
         </div>
         <div id="blog-body">
           <div id="blog-grid">

@@ -1,13 +1,21 @@
 .listing-item-holder {
-  max-width: 400px;
+  max-width: 800px;
   font-family: "PT Sans", sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  color: text;
+  opacity: 0.85;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.listing-item-holder:hover {
+  opacity: 1;
 }
 
 .listing-photos {
   width: 100%;
-  height: 300px;
+  height: 600px;
   object-fit: cover;
 }
 
@@ -17,11 +25,14 @@
   text-transform: uppercase;
   font-weight: 900;
   padding: 0.25rem 0;
+  color: var(--black);
+  opacity: .8;
 }
 
 .listing-item-body {
   display: flex;
   justify-content: space-between;
+  opacity: 0.5;
 }
 
 .listing-details-holder {
@@ -30,12 +41,13 @@
 }
 
 .listing-detail {
+  font-size: 10px;
   margin-right: 0.75rem;
   text-align: center;
 }
 
 .listing-detail div:nth-of-type(2) {
-  opacity: 0.3;
+  opacity: 0.8;
   font-size: 10px;
 }
 

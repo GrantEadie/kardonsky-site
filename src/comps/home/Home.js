@@ -7,7 +7,7 @@ const Home = () => {
       <div id="hero-holder" className="home">
         <img
           id="hero-img"
-          src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/valeriekardonsky9.png?alt=media&token=43f3e294-4cb6-4d3c-bf47-5901977eb7e4"
+          src="https://images.unsplash.com/photo-1556046858-0c109614642b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
           alt="hero-page"
         />
         <div id="hero-text">

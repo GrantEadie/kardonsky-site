@@ -5,72 +5,60 @@
   flex-direction: column;
 }
 
-#process-page #hero-holder {
-  min-height: unset !important;
-  max-height: 400px !important;
-}
-
 #process-body {
-  padding: 40px;
+  margin-bottom: 100px;
   max-width: 1200px;
   min-width: 780px;
 }
 
-#process-tabs {
-  display: flex;
-}
-
-.process-tab {
-  margin-right: 40px;
-  font-weight: 100;
-  font-family: "PT Sans", sans-serif;
-}
-
-.process-tab a {
-  opacity: 0.5;
-  padding: 5px 5px;
-  border-radius: 0;
-  letter-spacing: 1px;
-  border: 1px solid transparent !important;
-  font-size: 1.3rem;
-}
-
 .process-cards-holder {
   margin: 40px 0;
-  display: grid;
-  grid-template-columns: auto auto;
-  column-gap: 20px;
-  row-gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .process-card {
   width: 300px;
-  font-family: "PT Sans", sans-serif;
-  padding: 40px;
+  padding: 40px 0;
+  margin: 20px 0;
+  margin-right: 80px;
   position: relative;
-  background: var(--tan);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0%;
+  opacity: 0.8;
+  line-height: 130%;
 }
 
 .process-card-body {
   font-size: 0.85rem;
   letter-spacing: 0;
-  line-height: 20px;
 }
 
 .process-card-title {
   text-transform: capitalize;
   font-weight: 900;
   padding-bottom: 20px;
-  max-width: 75%;
-  font-family: "PT Serif", serif;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.2rem;
+  line-height: 150%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.process-card-span {
+  width: 75%;
 }
 
 .process-card svg {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 20px;
   width: 30px;
   height: 30px;
 }
+
+.selected {
+  background: var(--white);
+  color: black;
+}
+
+

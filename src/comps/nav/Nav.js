@@ -8,14 +8,10 @@ const Nav = () => {
   return (
     <div
       id="nav-bar"
-      className={
-        location.pathname === "/blog" || location.pathname === "/listings"
-          ? "nav-black"
-          : null
-      }
+      className={location.pathname === "/" ? "nav-bar-home" : null}
     >
       <div className="nav-logo">
-        <NavLink to="/">valerie kardonsky</NavLink>
+        <NavLink to="/">vk</NavLink>
       </div>
       <div id="nav-items-holder">
         <div className="nav-item">
@@ -25,7 +21,7 @@ const Nav = () => {
           <NavLink to="/blog">blog</NavLink>
         </div>
         <div className="nav-item">
-          <NavLink to="/about-me">about me</NavLink>
+          <NavLink to="/about-me">about</NavLink>
         </div>
         <div className="nav-item">
           <NavLink to="/listings">listings</NavLink>

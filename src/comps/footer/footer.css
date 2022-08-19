@@ -1,26 +1,38 @@
 #footer-holder {
-  background: var(--dark-red);
+  background: linear-gradient(
+    29deg,
+    rgba(22, 22, 29, 0.95) 0%,
+    rgba(22, 22, 29, 1) 48%
+  );
   color: var(--white);
   padding: 100px 60px;
   font-family: "PT Sans", sans-serif;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   letter-spacing: 1px;
   font-weight: 100;
-  
+}
+
+#footer-holder p {
+  margin: 0;
+  font-size: 0.75rem;
+  padding: 0;
 }
 
 .footer-card {
-  margin: 0px 20px;
+  margin-bottom: 20px;
+  opacity: 0.6;
 }
 
 .footer-line {
   border-right: 1px solid var(--white);
+  opacity: 0.6;
 }
 
 .footer-socials {
   display: flex;
   justify-content: space-between;
+  opacity: 0.6;
 }
 
 .footer-socials svg:hover {
@@ -30,4 +42,9 @@
 
 #footer-holder svg path {
   fill: var(--white);
+}
+
+#footer-items-holder {
+  padding: 0 100px;
+  width: max-content;
 }

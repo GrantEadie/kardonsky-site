@@ -4,7 +4,7 @@ import "./about.css";
 const About = () => {
   return (
     <div id="about-me">
-      <div id="about-me-header">
+      {/* <div id="about-me-header">
         <img
           id="about-me-header-img"
           src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/valeriekardonky4.png?alt=media&token=ac8f5b21-fc3f-48d3-bdaa-23a23b850fde"
@@ -17,21 +17,19 @@ const About = () => {
             My name is Valerie, and I live right here in the Methow Valley.
           </h2>
         </div>
-      </div>
+      </div> */}
       <div id="about-me-body">
         <div id="about-me-col">
           <img
             id="about-me-headshot"
-            src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2FValerieKardonsky6.jpg?alt=media&token=ebd136e6-5fc2-49ae-adb3-8ed3b08726c0"
+            src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2Fval-headshot-vector_3.png?alt=media&token=22952274-7077-45e1-8d9b-59b464215dcf"
             alt="valerie kardonsky"
           />
           <h3>Valerie Kardonsky</h3>
           <h4>Methow Valley Real Estate Broker</h4>
         </div>
         <div id="about-me-col">
-          <h5>
-            As a client, your needs and goals come first, always!
-          </h5>
+          <h5>As a client, your needs and goals come first, always!</h5>
           <p>
             Looking for a new home is more than a property search and I
             understand this. It's about your life! Whether you're searching for

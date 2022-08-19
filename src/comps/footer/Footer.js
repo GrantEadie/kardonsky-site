@@ -11,25 +11,25 @@ const Footer = () => {
   return (
     <div id="footer-holder">
       <MethowLogo />
-      <div className="footer-card">
-        <p>Valerie Kardonsky</p>
-        <p>(206) 310-1036</p>
-      </div>
-      <div className="footer-line" />
-      <div className="footer-card">
-        <p>141 Riverside Avenue</p>
-        <p>Winthrop, WA 98862</p>
-      </div>
-      <div className="footer-line" />
-      <div className="footer-card">
-        <p>valerie@methowhomes.com</p>
-        <div className="footer-socials">
-          <InstagramLogo size={32} weight="fill" />
-          <FacebookLogo size={32} weight="fill" />
-          <TwitterLogo size={32} weight="fill" />
-          <LinkedinLogo size={32} weight="fill" />
+      <div id="footer-items-holder">
+        <div className="footer-card">
+          <p>Valerie Kardonsky</p>
+          <p>(206) 310-1036</p>
         </div>
-      </div>
+        <div className="footer-card">
+          <p>141 Riverside Avenue</p>
+          <p>Winthrop, WA 98862</p>
+        </div>
+        <div className="footer-card">
+          <p>valerie@methowhomes.com</p>
+          <div className="footer-socials">
+            <InstagramLogo size={32} weight="fill" />
+            <FacebookLogo size={32} weight="fill" />
+            <TwitterLogo size={32} weight="fill" />
+            <LinkedinLogo size={32} weight="fill" />
+          </div>
+        </div>
+      </div> 
     </div>
   );
 };
