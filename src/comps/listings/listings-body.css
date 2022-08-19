@@ -3,12 +3,16 @@
   margin: 3rem;
   padding: 1rem 1rem 4rem 1rem;
   height: min-content;
-  border: 1px solid var(--black);
+  border: 2px solid var(--black);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
 }
 
 #listings-holder {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 #listings-body {
@@ -27,3 +31,6 @@
   margin: 100px 0;
 }
 
+#listings-blank-col {
+  /* width: 20%; */
+}

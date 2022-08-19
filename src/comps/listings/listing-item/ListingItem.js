@@ -1,6 +1,5 @@
 import "swiper/css";
 import "./listing-item.css";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 export let currency = Intl.NumberFormat("en-US", {
   style: "currency",
@@ -12,18 +11,9 @@ const ListingItem = ({ data }) => {
   const { address, city, beds, baths, sqft, price, photos } = data;
   return (
     <div className="listing-item-holder">
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
-      >
-        {photos.map((url, index) => (
-          <SwiperSlide key={index}>
-            <img className="listing-photos" src={url} alt={index} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div >
+        <img className="listing-photos" src={photos[0]} alt={address} />
+      </div>
       <div className="listing-item-title">
         <div className="listing-city">{city}</div>
         <div className="listing-address">{address}</div>

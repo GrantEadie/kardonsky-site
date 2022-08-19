@@ -9,23 +9,29 @@ const ListingsBody = () => {
   let navigate = useNavigate();
   const { user } = useOutletContext();
 
+  const goToListing = (address) => {
+    navigate(`/listings/${address}`)
+    window.scrollTo(0,0);
+  }
+
   return (
     <div id="listings-holder">
-      <div id="listings-body">
         <div id="listings-title">current properties</div>
+      <div id="listings-body">
         <div id="listings-items-container">
           {user && <CreateListingButton />}
 
           {sampleData.map((data, index) => (
             <div
               key={index}
-              onClick={() => navigate(`/listings/${data.address}`)}
+              onClick={() => goToListing(data.address)}
             >
               <ListingItem data={data} />
             </div>
           ))}
         </div>
       </div>
+      <div id="listings-blank-col"></div>
     </div>
   );
 };
