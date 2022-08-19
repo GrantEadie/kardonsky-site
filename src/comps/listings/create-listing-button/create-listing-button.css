@@ -1,0 +1,20 @@
+#create-list-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--black);
+  margin-bottom: 40px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+#create-list-button:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+#create-list-button svg {
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+}

@@ -8,10 +8,12 @@ import { useState, useEffect } from "react";
 import { app } from "../../firebase";
 import "./login.css";
 import { Lock, LockOpen } from "phosphor-react";
+import { useNavigate } from "react-router-dom";
 
 function Login({ user, setUser, handleLogout }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const auth = getAuth();
 
@@ -25,6 +27,9 @@ function Login({ user, setUser, handleLogout }) {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
       });
+    setTimeout(() => {
+      navigate("/");
+    }, "2000");
   };
 
   return (

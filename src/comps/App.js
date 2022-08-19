@@ -8,7 +8,7 @@ function App({ user, handleLogout }) {
     <div>
       {user && <Logout handleLogout={handleLogout} />}
       <Nav />
-      <Outlet />
+      <Outlet context={{ user }} />
       <Footer />
     </div>
   );

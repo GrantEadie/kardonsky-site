@@ -10,8 +10,8 @@ export const sampleData = [
       "https://mlsgrid.idxhome.com/images/8e096e16-ab76-4052-987b-c9550c138e91.jpg",
       "https://mlsgrid.idxhome.com/images/c20505c6-4ac9-4dae-b9c2-98bee8ddc779.jpg",
       "https://images.unsplash.com/photo-1624404842751-3c041a9ec1cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-      "https://images.unsplash.com/photo-1596440413055-f844286be730?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      "https://images.unsplash.com/photo-1602652393972-01cd44566926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80",
+      // "https://images.unsplash.com/photo-1596440413055-f844286be730?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      // "https://images.unsplash.com/photo-1602652393972-01cd44566926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1430&q=80",
     ],
     id: "1",
     description:

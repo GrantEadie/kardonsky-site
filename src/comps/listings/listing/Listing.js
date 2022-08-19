@@ -38,7 +38,12 @@ const Listing = () => {
         <div id="listing-photos">
           <div id="listing-photos-container">
             {listing.photos.map((url, index) => (
-              <img className="listing-photos" src={url} alt={index} />
+              <img
+                className="listing-photos"
+                src={url}
+                alt={index}
+                key={index}
+              />
             ))}
           </div>
         </div>
