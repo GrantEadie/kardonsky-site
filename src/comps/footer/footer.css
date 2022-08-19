@@ -33,11 +33,13 @@
   display: flex;
   justify-content: space-between;
   opacity: 0.6;
+  padding: 10px 0;
+  margin: 0;
 }
 
 .footer-socials svg:hover {
   cursor: pointer;
-  transform: translateY(-5px);
+  transform: scale(1.2);
 }
 
 #footer-holder svg path {

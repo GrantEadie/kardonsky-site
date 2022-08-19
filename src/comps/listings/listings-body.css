@@ -22,3 +22,8 @@
   display: flex;
   flex-direction: column;
 }
+
+#listing-page {
+  margin: 100px 0;
+}
+

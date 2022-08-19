@@ -1,16 +1,15 @@
 .listing-item-holder {
   max-width: 800px;
-  font-family: "PT Sans", sans-serif;
   font-size: 1.4rem;
   margin-bottom: 40px;
   color: text;
-  opacity: 0.85;
+  opacity: 1;
   cursor: pointer;
   transition: all .2s ease;
 }
 
 .listing-item-holder:hover {
-  opacity: 1;
+  opacity: .8;
 }
 
 .listing-photos {

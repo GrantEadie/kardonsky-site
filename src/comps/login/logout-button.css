@@ -4,17 +4,19 @@
   bottom: 0;
   margin: 20px;
   padding: 10px;
-  background: var(--tan);
+  border: 1px solid var(--black);
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   opacity: 0.5;
   cursor: pointer;
+  z-index: 999;
+  background: var(--white);
 }
 
 #logout-button svg path {
-  fill: var(--white);
+  fill: var(--black);
 }
 
 #logout-button:hover {

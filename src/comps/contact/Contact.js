@@ -29,12 +29,12 @@ const Contact = () => {
         <div id="contact-form">
           <img
             id="contact-headshot"
-            src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2FValerieKardonsky6.jpg?alt=media&token=ebd136e6-5fc2-49ae-adb3-8ed3b08726c0"
+            src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2Fval-headshot-vector_3.png?alt=media&token=22952274-7077-45e1-8d9b-59b464215dcf"
             alt="headshot"
           />
           <form>
             <div id="contact-form-header">
-              <AddressBook size={32} weight="fill" />
+              <AddressBook size={32} />
               <h1>get in touch</h1>
             </div>
             <input type="text" placeholder="Name" />

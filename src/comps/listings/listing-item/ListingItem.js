@@ -2,9 +2,10 @@ import "swiper/css";
 import "./listing-item.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-let currency = Intl.NumberFormat("en-US", {
+export let currency = Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
+  minimumFractionDigits: 0,
 });
 
 const ListingItem = ({ data }) => {

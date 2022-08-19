@@ -23,6 +23,7 @@
   top: -25px;
   right: -25px; 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: var(--white);
 }
 
 #contact-body {
@@ -79,7 +80,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid rgba(150, 150, 150, 0.1);
+  border: none;
   font-family: "PT Sans", sans;
   background: rgba(150, 150, 150, 0.1);
   box-sizing: border-box;
@@ -89,7 +90,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid rgba(150, 150, 150, 0.1);
+  border: none;
   height: 200px;
   font-family: "PT Sans", sans;
   background: rgba(150, 150, 150, 0.1);
