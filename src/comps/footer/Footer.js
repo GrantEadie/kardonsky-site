@@ -10,8 +10,20 @@ import {
 const Footer = () => {
   return (
     <div id="footer-holder">
+      <div id="footer">
+
+      
+      <div className="footer-items-holder-routes">
+        
+          <h3>about</h3>
+          <h3>the process</h3>
+          <h3>blog</h3>        
+          <h3>listings</h3>        
+          <h3>contact</h3>
+
+      </div>
       <MethowLogo />
-      <div id="footer-items-holder">
+      <div className="footer-items-holder">
         <div className="footer-card">
           <p>Valerie Kardonsky</p>
           <p>(206) 310-1036</p>
@@ -30,6 +42,7 @@ const Footer = () => {
           </div>
         </div>
       </div> 
+      </div>
     </div>
   );
 };

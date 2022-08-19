@@ -4,6 +4,10 @@
     rgba(22, 22, 29, 0.95) 0%,
     rgba(22, 22, 29, 1) 48%
   );
+  
+}
+
+#footer {
   color: var(--white);
   padding: 100px 60px;
   font-family: "PT Sans", sans-serif;
@@ -11,6 +15,7 @@
   justify-content: center;
   letter-spacing: 1px;
   font-weight: 100;
+  opacity: .8;
 }
 
 #footer-holder p {
@@ -21,18 +26,11 @@
 
 .footer-card {
   margin-bottom: 20px;
-  opacity: 0.6;
-}
-
-.footer-line {
-  border-right: 1px solid var(--white);
-  opacity: 0.6;
 }
 
 .footer-socials {
   display: flex;
   justify-content: space-between;
-  opacity: 0.6;
   padding: 10px 0;
   margin: 0;
 }
@@ -46,7 +44,22 @@
   fill: var(--white);
 }
 
-#footer-items-holder {
-  padding: 0 100px;
+.footer-items-holder {
   width: max-content;
+  padding: 0 100px;
+}
+.footer-items-holder-routes {
+  padding: 0 100px;
+}
+
+.footer-items-holder-routes h3 
+{
+  text-align: right;
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 100;
+  border-bottom: 1px solid rgba(255,255,255,.7);
+}
+.footer-items-holder-routes h3:first-of-type {
+  padding-top: 0;
 }

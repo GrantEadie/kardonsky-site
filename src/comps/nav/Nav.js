@@ -14,13 +14,13 @@ const Nav = () => {
       </div>
       <div id="nav-items-holder">
         <div className="nav-item">
+          <NavLink to="/about-me">about</NavLink>
+        </div>
+        <div className="nav-item">
           <NavLink to="/the-process">the process</NavLink>
         </div>
         <div className="nav-item">
           <NavLink to="/blog">blog</NavLink>
-        </div>
-        <div className="nav-item">
-          <NavLink to="/about-me">about</NavLink>
         </div>
         <div className="nav-item">
           <NavLink to="/listings">listings</NavLink>

@@ -59,6 +59,7 @@ const About = () => {
           </p>
         </div>
       </div>
+        <button>Learn more about the Methow Community</button>
     </div>
   );
 };

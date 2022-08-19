@@ -2,59 +2,34 @@
   min-height: 100vh;
   color: white;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#about-me-header {
-  font-family: 'DM Serif Display', serif;
-  height: 400px;
-  position: relative;
-  display: flex;
-  font-size: 48px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  overflow-y: hidden;
-  background: black;
-}
-
-#about-me-header-img {
-  opacity: 0.6;
-  width: 100%;
-}
-
-#about-me-header-text {
-  position: absolute;
-  text-align: center;
-}
-
-#about-me-header h2 {
-  font-size: 0.9rem;
-  padding: 0;
-  margin: 0;
-  font-weight: 100;
-}
-
-#about-me-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+  padding: 25px 0;
+  margin-bottom: 100px;
 }
 
 #about-me-body {
-  padding: 100px;
   display: flex;
+  padding: 50px 0;
   justify-content: center;
+}
+
+#about-me button {
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--black);
+}
+
+#about-me button:hover {
+  background: var(--black);
+  color: var(--white);
 }
 
 #about-me-headshot {
   object-fit: cover;
   width: 75%;
-  padding: 0 60px;
+  padding-right: 60px;
   opacity: .8;
 }
 
