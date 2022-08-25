@@ -7,7 +7,7 @@ const Blog = () => {
   const navigate = useNavigate();
   const { user } = useOutletContext();
   const { docs } = useGetDocs("blog");
-  console.oog(docs)
+  console.log(docs)
 
   return (
     <div id="blog-holder">
