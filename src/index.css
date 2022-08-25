@@ -34,6 +34,23 @@ button {
   color: var(--white);
   font-family: inherit;
   font-size: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button svg {
+  margin-left: 3px;
+}
+
+.btn-dark {
+  border: 1px solid var(--black);
+  color: var(--black);
+}
+
+.btn-dark:hover {
+  color: var(--white);
+  background: var(--black);
 }
 
 button:hover a {
@@ -42,6 +59,35 @@ button:hover a {
 
 button:hover {
   background: var(--white);
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  font-family: "PT Sans", sans;
+  background: rgba(150, 150, 150, 0.1);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid black;
+  transform: translateX(5px);
+}
+
+.delete {
+  border: 1px solid rgb(255, 107, 107);
+  color: rgb(255, 107, 107);
+}
+
+.delete:hover {
+  color: white;
+  background: rgb(255, 107, 107);
 }
 
 .page-header-container {
@@ -109,3 +155,117 @@ button:hover {
   background: var(--white);
   color: var(--black);
 }
+
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/**
+ * ==============================================
+ * Dot Fire
+ * ==============================================
+ */
+.dot-fire {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--black);
+  color: var(--black);
+  box-shadow: 9999px 22.5px 0 -5px var(--black);
+  animation: dotFire 1.5s infinite linear;
+  animation-delay: -0.85s;
+}
+
+.dot-fire::before,
+.dot-fire::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--black);
+  color: var(--black);
+}
+
+.dot-fire::before {
+  box-shadow: 9999px 22.5px 0 -5px var(--black);
+  animation: dotFire 1.5s infinite linear;
+  animation-delay: -1.85s;
+}
+
+.dot-fire::after {
+  box-shadow: 9999px 22.5px 0 -5px var(--black);
+  animation: dotFire 1.5s infinite linear;
+  animation-delay: -2.85s;
+}
+
+@keyframes dotFire {
+  1% {
+    box-shadow: 9999px 22.5px 0 -5px var(--black);
+  }
+  50% {
+    box-shadow: 9999px -5.625px 0 2px var(--black);
+  }
+  100% {
+    box-shadow: 9999px -22.5px 0 -5px var(--black);
+  }
+}
+
+/* checkbox-circle2 */
+.checkbox-circle2 {
+  width: max-content;
+}
+.checkbox-circle2 input[type="checkbox"] {
+  display: none;
+}
+.checkbox-circle2 input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  font: 14px/20px "Open Sans", Arial, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.checkbox-circle2 input[type="checkbox"]:hover + label:hover {
+  color: rgb(23, 86, 228);
+}
+.checkbox-circle2 input[type="checkbox"]:hover + label:before {
+  border: 1px solid #343a3f;
+  box-shadow: 2px 1px 0 #343a3f;
+}
+.checkbox-circle2 input[type="checkbox"] + label:last-child {
+  margin-bottom: 0;
+}
+.checkbox-circle2 input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid #343a3f;
+  border-radius: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+  transition: all 0.2s, background 0.2s ease-in-out;
+  background: #f3f3f3;
+  box-shadow: -2px -1px 0 #343a3f;
+}
+.checkbox-circle2 input[type="checkbox"]:checked + label:before {
+  border-radius: 1em;
+  border: 2px solid #fff;
+  width: 1.15em;
+  height: 1.15em;
+  background: #50565a;
+  box-shadow: 2px 1px 0 #50565a;
+}
+/* checkbox-circle2 end */

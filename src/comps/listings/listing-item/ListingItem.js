@@ -1,18 +1,33 @@
 import "swiper/css";
 import "./listing-item.css";
+import currency from "currency.js";
 
-export let currency = Intl.NumberFormat("en-US", {
+export let toCurrency = Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
   minimumFractionDigits: 0,
 });
 
 const ListingItem = ({ data }) => {
-  const { address, city, beds, baths, sqft, price, photos } = data;
+  const {
+    address,
+    city,
+    bedrooms,
+    bathrooms,
+    sqft,
+    price,
+    coverImage,
+    acres,
+    images,
+  } = data;
   return (
     <div className="listing-item-holder">
-      <div >
-        <img className="listing-photos" src={photos[0]} alt={address} />
+      <div>
+        <img
+          className="listing-photos"
+          src={!coverImage ? images[0] : coverImage}
+          alt={address}
+        />
       </div>
       <div className="listing-item-title">
         <div className="listing-city">{city}</div>
@@ -21,19 +36,26 @@ const ListingItem = ({ data }) => {
       <div className="listing-item-body">
         <div className="listing-details-holder">
           <div className="listing-detail">
-            <div>{beds}</div>
+            <div>{bedrooms}</div>
             <div>BED</div>
           </div>
           <div className="listing-detail">
-            <div>{baths}</div>
+            <div>{bathrooms}</div>
             <div>BATH</div>
           </div>
           <div className="listing-detail">
             <div>{sqft}</div>
             <div>SQFT</div>
           </div>
+          <div className="listing-detail">
+            <div>{acres}</div>
+            <div>ACRES</div>
+          </div>
         </div>
-        <div className="listing-price">{currency.format(price)}</div>
+        <div className="listing-price">
+          <div className="listing-activity">SOLD</div>
+          {currency(price, { fromCents: true, precision: 0 }).format()}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-#listing {
+#blog-detail {
   margin: 100px 0;
   color: var(--black);
   display: flex;
@@ -7,48 +7,45 @@
   min-height: 100vh;
 }
 
-#listing-container {
+#blog-detail-container {
   max-width: 900px;
 }
 
-#listing-header-text {
+#blog-detail-header-text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#listing-header-text h1 {
-  font-size: 5rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  text-transform: capitalize;
-}
-
-#listing-header-text h2 {
+#blog-detail-header-text h1 {
   font-size: 2rem;
+  font-weight: 700;
   margin: 0;
   padding: 0;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  font-weight: 100;
-  text-align: center;
   text-transform: capitalize;
 }
 
-#listing-header-text h3 {
+#blog-detail-header-text h2 {
   font-size: 1rem;
   margin: 0;
   padding: 0;
   font-weight: 100;
-  opacity: 0.6;
+  text-transform: capitalize;
 }
 
-#listing-header-text div {
+#blog-detail-header-text h3 {
+  font-size: 1rem;
+  line-height: 140%;
+  margin: 0;
+  padding: 0;
+  font-weight: 100;
+  opacity: 0.6;
+  white-space: pre-wrap;
+}
+
+#blog-detail-header-text div {
   width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 40px 0;
+  padding-bottom: 20px;
 }
 
 #listing-stats {
@@ -105,7 +102,6 @@
 
 .listing-admin {
   display: flex;
-
 }
 .listing-admin button {
   margin-right: 10px;

@@ -1,6 +1,7 @@
 #blog {
   min-height: 100vh;
   padding-bottom: 200px;
+  white-space: pre-line;
 }
 
 #blog-body {
@@ -13,4 +14,36 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1400px;
+}
+
+.blog-card-wrapper {
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.blog-card-wrapper:hover {
+  opacity: 0.5;
+}
+
+.new-blog-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 128, 0, 0.619);
+  margin-bottom: 40px;
+  padding: 20px 0;
+  cursor: pointer;
+  color: rgba(0, 128, 0, 0.619);
+  width: 600px;
+}
+
+.new-blog-button:hover {
+  background: rgba(0, 128, 0, 0.619);
+  color: var(--white);
+}
+
+.new-blog-button svg {
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
 }

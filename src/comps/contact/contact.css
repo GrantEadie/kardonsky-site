@@ -76,27 +76,6 @@
   width: 50%;
 }
 
-#contact-form form input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  font-family: "PT Sans", sans;
-  background: rgba(150, 150, 150, 0.1);
-  box-sizing: border-box;
-}
-
-#contact-form form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: none;
-  height: 200px;
-  font-family: "PT Sans", sans;
-  background: rgba(150, 150, 150, 0.1);
-  box-sizing: border-box;
-}
-
 #contact-form button {
   width: 100%;
   padding: 10px;

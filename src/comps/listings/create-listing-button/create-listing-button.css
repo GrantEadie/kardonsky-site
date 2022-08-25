@@ -2,14 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--black);
+  border: 1px solid rgba(0, 128, 0, 0.619);
   margin-bottom: 40px;
   padding: 0 20px;
   cursor: pointer;
+  color: rgba(0, 128, 0, 0.619);
 }
 
 #create-list-button:hover {
-  background: var(--black);
+  background: rgba(0, 128, 0, 0.619);
   color: var(--white);
 }
 

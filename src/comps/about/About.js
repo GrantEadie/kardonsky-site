@@ -1,23 +1,10 @@
 import React from "react";
+import Testimonials from "../testimonials/Testimonials";
 import "./about.css";
 
 const About = () => {
   return (
     <div id="about-me">
-      {/* <div id="about-me-header">
-        <img
-          id="about-me-header-img"
-          src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/valeriekardonky4.png?alt=media&token=ac8f5b21-fc3f-48d3-bdaa-23a23b850fde"
-          alt="hero-page"
-        />
-
-        <div id="about-me-header-text">
-          <h1>A Bit About Me</h1>
-          <h2>
-            My name is Valerie, and I live right here in the Methow Valley.
-          </h2>
-        </div>
-      </div> */}
       <div id="about-me-body">
         <div id="about-me-col">
           <img
@@ -59,7 +46,8 @@ const About = () => {
           </p>
         </div>
       </div>
-        <button>Learn more about the Methow Community</button>
+      {/* <button>Learn more about the Methow Community</button> */}
+      <Testimonials />
     </div>
   );
 };
