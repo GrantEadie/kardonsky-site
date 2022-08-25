@@ -13,9 +13,9 @@ const useGetDocs = (category) => {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
-    console.log("getting into docs");
     const unsub = async () => {
       const querySnapshot = await getDocs(collection(db, category));
+      console.log(querySnapshot)
       let documents = [];
       querySnapshot.forEach((doc) => {
         documents.push({ ...doc.data(), id: doc.id });
