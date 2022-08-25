@@ -30,6 +30,15 @@ const useGetDocs = (category) => {
 
 export default useGetDocs;
 
+export const getDocuments = async (cat) => {
+  const querySnapshot = await getDocs(collection(db, cat));
+  let documents = [];
+  querySnapshot.forEach((doc) => {
+    documents.push({ ...doc.data(), id: doc.id });
+  });
+  return { documents };
+};
+
 export const addDocument = async (category, doc) => {
   try {
     const docRef = await addDoc(collection(db, category), {
