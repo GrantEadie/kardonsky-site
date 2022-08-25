@@ -1,21 +1,17 @@
 import "./blog.css";
 import BlogCard from "./blog-card/BlogCard";
 import { useNavigate, useOutletContext } from "react-router-dom";
-import { getDocuments } from "../../hooks/useFirestore";
-import { useEffect, useState } from "react";
+import useGetDocs from "../../hooks/useFirestore";
 
 const Blog = () => {
   const navigate = useNavigate();
   const { user } = useOutletContext();
-  const [documents, setDocs] = useState([]);
-  useEffect(() => {
-    const { docs } = getDocuments("blog");
-    setDocs(docs);
-  }, [setDocs]);
+  const { docs } = useGetDocs("blog");
+  console.oog(docs)
 
   return (
     <div id="blog-holder">
-      {!documents.length ? (
+      {!docs.length ? (
         <div className="loading">
           <div className="dot-fire"></div>
         </div>
@@ -37,7 +33,7 @@ const Blog = () => {
                   Add a new blog post
                 </div>
               ) : null}
-              {documents.map((post, index) => (
+              {docs.map((post, index) => (
                 <div
                   className={`blog-card-wrapper`}
                   key={index}
