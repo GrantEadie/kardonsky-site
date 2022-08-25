@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { addDoc, collection, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  getDocs,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
 const useGetDocs = (category) => {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
+    console.log("getting into docs");
     const unsub = async () => {
       const querySnapshot = await getDocs(collection(db, category));
-      console.log(querySnapshot);
       let documents = [];
       querySnapshot.forEach((doc) => {
         documents.push({ ...doc.data(), id: doc.id });
@@ -27,7 +34,7 @@ export const addDocument = async (category, doc) => {
   try {
     const docRef = await addDoc(collection(db, category), {
       ...doc,
-    })
+    });
     return docRef.id;
   } catch (e) {
     console.log("Error adding document: ", e);
@@ -35,13 +42,13 @@ export const addDocument = async (category, doc) => {
 };
 
 export const updateDocument = async (category, docID, newDoc) => {
-    const ref = doc(db, category, docID);
-    await updateDoc(ref, {
-        ...newDoc
-    })
-}
+  const ref = doc(db, category, docID);
+  await updateDoc(ref, {
+    ...newDoc,
+  });
+};
 
 export const deleteDocument = async (category, docID) => {
-    await deleteDoc(doc(db, category, docID));
-    console.log(docID, "document deleted");
-}
+  await deleteDoc(doc(db, category, docID));
+  console.log(docID, "document deleted");
+};
