@@ -21,7 +21,7 @@ const Footer = () => {
       <div id="footer">
         <div className="footer-items-holder-routes">
           {routes.map((route, index) => (
-            <h3 onClick={() => handleClick(route)}>
+            <h3 key={index} onClick={() => handleClick(route)}>
               {route.split("-").join(" ")}
             </h3>
           ))}
