@@ -15,7 +15,7 @@ const useGetDocs = (category) => {
   useEffect(() => {
     const unsub = async () => {
       const querySnapshot = await getDocs(collection(db, category));
-      console.log(querySnapshot)
+      console.log(querySnapshot);
       let documents = [];
       querySnapshot.forEach((doc) => {
         documents.push({ ...doc.data(), id: doc.id });
@@ -29,6 +29,13 @@ const useGetDocs = (category) => {
 };
 
 export default useGetDocs;
+
+export const getStuff = async (stuff) => {
+  const stuffSnapshot = await getDocs(collection(db, stuff));
+  const stuffList = stuffSnapshot.docs.map((doc) => doc.data());
+  console.log(stuffList);
+  return stuffList;
+};
 
 export const addDocument = async (category, doc) => {
   try {

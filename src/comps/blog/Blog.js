@@ -1,13 +1,21 @@
 import "./blog.css";
 import BlogCard from "./blog-card/BlogCard";
 import { useNavigate, useOutletContext } from "react-router-dom";
-import useGetDocs from "../../hooks/useFirestore";
+import { getStuff } from "../../hooks/useFirestore";
+import { useEffect, useState } from "react";
 
 const Blog = () => {
   const navigate = useNavigate();
   const { user } = useOutletContext();
-  const { docs } = useGetDocs("blog");
-  console.log(docs)
+  const [docs, setDocs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const gotDocs = await getStuff("blog");
+      setDocs(gotDocs);
+    };
+    fetchData();
+  }, [setDocs]);
 
   return (
     <div id="blog-holder">
