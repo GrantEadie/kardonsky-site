@@ -44,7 +44,7 @@ const Blog = () => {
             </div>
           </div>
         </div>
-      )}ß
+      )}
     </div>
   );
 };

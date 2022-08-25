@@ -1,3 +1,9 @@
+#blog-holder {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 #blog {
   min-height: 100vh;
   padding-bottom: 200px;
