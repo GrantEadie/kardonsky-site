@@ -1,10 +1,11 @@
 import "./listing.css";
 import { useOutletContext } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { toCurrency } from "../listing-item/ListingItem";
-import useGetDocs from "../../../hooks/useFirestore";
 import { deleteDocument } from "../../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
+import { getStuff } from "../../../hooks/useFirestore";
+import { useEffect, useState } from "react";
+import currency from "currency.js";
 
 const stats = ["bedrooms", "bathrooms", "sqft", "price"];
 
@@ -12,8 +13,15 @@ const Listing = () => {
   const { listingId } = useParams();
   let navigate = useNavigate();
   const { user } = useOutletContext();
-  const { docs } = useGetDocs("listings");
-  const listing = docs.find((data) => data.id === listingId);
+  const [listing, setListing] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const gotDocs = await getStuff("listings");
+      setListing(gotDocs.find((data) => data.address === listingId));
+    };
+    fetchData();
+  }, [setListing, listingId]);
 
   const handleDeleteClick = (listingId) => {
     if (
@@ -57,7 +65,10 @@ const Listing = () => {
                   <p>{stat}</p>
                   <p>
                     {stat === "price"
-                      ? toCurrency.format(listing[stat])
+                      ? currency(listing[stat], {
+                          fromCents: true,
+                          precision: 0,
+                        }).format()
                       : listing[stat]}
                   </p>
                 </div>

@@ -1,16 +1,25 @@
 import "./blog-detail.css";
 import { useOutletContext } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import useGetDocs from "../../../hooks/useFirestore";
 import { deleteDocument } from "../../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
+import { getStuff } from "../../../hooks/useFirestore";
+import { useEffect, useState } from "react";
 
 const BlogDetail = () => {
   const { blogId } = useParams();
   let navigate = useNavigate();
   const { user } = useOutletContext();
-  const { docs } = useGetDocs("blog");
-  const post = docs.find((data) => data.id === blogId);
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const gotDocs = await getStuff("blog");
+      setPost(gotDocs.find((data) => data.date === blogId))
+      
+    };
+    fetchData();
+}, [setPost, blogId]);
 
   const handleDeleteClick = (blogId) => {
     if (

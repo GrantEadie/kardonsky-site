@@ -45,7 +45,7 @@ const Blog = () => {
                 <div
                   className={`blog-card-wrapper`}
                   key={index}
-                  onClick={() => navigate(`/blog/${post.id}`)}
+                  onClick={() => navigate(`/blog/${post.date}`)}
                 >
                   <BlogCard post={post} key={index} />
                 </div>

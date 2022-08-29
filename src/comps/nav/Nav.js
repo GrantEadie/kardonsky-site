@@ -3,14 +3,17 @@ import { NavLink, useLocation } from "react-router-dom";
 
 const Nav = () => {
   let location = useLocation();
+  const { pathname } = location;
 
   return (
-    <div
-      id="nav-bar"
-      className={location.pathname === "/" ? "nav-bar-home" : null}
-    >
-      <div className="nav-logo">
-        <NavLink to="/">vk</NavLink>
+    <div id="nav-bar" className={pathname === "/" ? "nav-bar-home" : null}>
+      <div
+        className="nav-logo"
+        style={{ fontSize: pathname === "/" ? "1rem" : "2rem" }}
+      >
+        <NavLink to="/">
+          {pathname === "/" ? "valerie kardonsky" : "vk"}
+        </NavLink>
       </div>
       <div id="nav-items-holder">
         <div className="nav-item">

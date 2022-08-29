@@ -3,12 +3,21 @@ import ListingItem from "./listing-item/ListingItem";
 import { useNavigate } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import CreateListingButton from "./create-listing-button/CreateListingButton";
-import useGetDocs from "../../hooks/useFirestore";
+import { useEffect, useState } from "react";
+import { getStuff } from "../../hooks/useFirestore";
 
 const ListingsBody = () => {
   let navigate = useNavigate();
   const { user } = useOutletContext();
-  const { docs } = useGetDocs("listings");
+  const [docs, setDocs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const gotDocs = await getStuff("listings");
+      setDocs(gotDocs);
+    };
+    fetchData();
+  }, [setDocs]);
 
   const goToListing = (address) => {
     navigate(`/listings/${address}`);
@@ -24,7 +33,7 @@ const ListingsBody = () => {
             <div id="listings-items-container">
               {user && <CreateListingButton />}
               {docs.map((data, index) => (
-                <div key={index} onClick={() => goToListing(data.id)}>
+                <div key={index} onClick={() => goToListing(data.address)}>
                   <ListingItem data={data} />
                 </div>
               ))}

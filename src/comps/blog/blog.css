@@ -2,12 +2,17 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #blog {
   min-height: 100vh;
   padding-bottom: 200px;
   white-space: pre-line;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #blog-body {
