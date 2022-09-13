@@ -2,7 +2,6 @@ import {useState} from 'react';
 import "./process.css";
 import Buyers from './buyers/Buyers';
 import Sellers from './sellers/Sellers';
-import AsyncImage from '../tools/AsyncImage';
 
 
 
@@ -12,7 +11,7 @@ const Process = () => {
     <div id="process-page-holder">
       <div id="process-page">
         <div className="page-header-container">
-          <AsyncImage
+          <img
             className="page-header-img"
             src="https://images.unsplash.com/photo-1521488357999-ff03ac2b5fd7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
             alt="hero-page"

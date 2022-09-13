@@ -11,7 +11,6 @@ import {
   CheckCircle,
 } from "phosphor-react";
 import emailjs from "@emailjs/browser";
-import AsyncImage from "../tools/AsyncImage";
 
 const Contact = () => {
   const [success, setSuccess] = useState(false);
@@ -43,7 +42,7 @@ const Contact = () => {
   return (
     <div id="contact-page">
       <div className="page-header-container">
-        <AsyncImage
+        <img
           className="page-header-img"
           src="https://images.unsplash.com/photo-1624404842751-3c041a9ec1cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
           alt="methow valley"
@@ -55,7 +54,7 @@ const Contact = () => {
       </div>
       <div id="contact-body">
         <div id="contact-form">
-          <AsyncImage
+          <img
             id="contact-headshot"
             src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2Fval-headshot-vector_3.png?alt=media&token=22952274-7077-45e1-8d9b-59b464215dcf"
             alt="headshot"

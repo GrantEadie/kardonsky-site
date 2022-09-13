@@ -8,7 +8,6 @@ import "swiper/css/pagination";
 
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 import { useRef } from "react";
-import AsyncImage from "../../tools/AsyncImage";
 
 const SwiperGallery = ({ urls, setShowGallery, currentFocusedImage }) => {
   const ref = useRef();
@@ -24,7 +23,7 @@ const SwiperGallery = ({ urls, setShowGallery, currentFocusedImage }) => {
       >
         {urls.map((url, index) => (
           <SwiperSlide key={index}>
-            <AsyncImage src={url} alt={`${index}`} />
+            <img src={url} alt={`${index}`} />
           </SwiperSlide>
         ))}
       </Swiper>

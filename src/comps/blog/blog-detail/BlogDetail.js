@@ -5,7 +5,6 @@ import { deleteDocument } from "../../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
 import { getStuff } from "../../../hooks/useFirestore";
 import { useEffect, useState } from "react";
-import AsyncImage from "../../tools/AsyncImage";
 import SwiperGallery from "../../listings/listing/SwiperGallery";
 
 const BlogDetail = () => {
@@ -67,7 +66,7 @@ const BlogDetail = () => {
           <div id="listing-photos">
             <div id="listing-photos-container">
               {post.images.map((url, index) => (
-                <AsyncImage
+                <img
                   className="listing-photos"
                   src={url}
                   alt={index}

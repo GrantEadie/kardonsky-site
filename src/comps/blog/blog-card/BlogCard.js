@@ -1,4 +1,3 @@
-import AsyncImage from "../../tools/AsyncImage";
 import "./blog-card.css";
 
 const BlogCard = ({ post }) => {
@@ -14,7 +13,7 @@ const BlogCard = ({ post }) => {
   const openPhoto = () => {};
   return (
     <div className="blog-card">
-      <AsyncImage
+      <img
         src={post.images}
         alt={post.title}
         onClick={() => openPhoto()}

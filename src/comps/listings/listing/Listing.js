@@ -7,7 +7,6 @@ import { getStuff } from "../../../hooks/useFirestore";
 import { useEffect, useState } from "react";
 import currency from "currency.js";
 import SwiperGallery from "./SwiperGallery";
-import AsyncImage from "../../tools/AsyncImage";
 
 const stats = ["bedrooms", "bathrooms", "sqft", "price"];
 
@@ -98,7 +97,7 @@ const Listing = () => {
             <div id="listing-photos-container">
               {listing.images.map((url, index) => (
                 <div className="listing-photo-wrap">
-                  <AsyncImage
+                  <img
                     className="listing-photos"
                     src={url}
                     alt={index}
