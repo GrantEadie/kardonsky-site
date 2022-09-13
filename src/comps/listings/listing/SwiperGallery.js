@@ -22,7 +22,7 @@ const SwiperGallery = ({ urls, setShowGallery, currentFocusedImage }) => {
         ref={ref}
       >
         {urls.map((url, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide className="swiper-slide-holder" key={index}>
             <img src={url} alt={`${index}`} />
           </SwiperSlide>
         ))}

@@ -13,8 +13,15 @@
     align-items: center;
 }
 
+.swiper-slide-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .swiper-gallery img {
     width: 100%;
+    max-width: 1200px;
 }
 
 .swiper-button-next, .swiper-button-prev {
