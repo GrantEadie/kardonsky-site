@@ -1,8 +1,17 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #contact-page {
   min-height: 100vh;
 }
 
-.contact-socials svg {
+.contact-socials a, .contact-socials svg {
   margin-right: 10px;
   cursor: pointer;
   width: 30px;
@@ -21,7 +30,7 @@
   border-radius: 50%;
   position: absolute;
   top: -25px;
-  right: -25px; 
+  right: -25px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-color: var(--white);
 }
@@ -68,6 +77,17 @@
 
 .contact-info-item span {
   margin-left: 10px;
+}
+
+#form-box {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  text-align: center;
+  animation: fadeIn 2s;
 }
 
 #contact-form form {

@@ -14,7 +14,7 @@ const ListingsBody = () => {
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("listings");
-      setDocs(gotDocs);
+      setDocs(gotDocs.sort((a, b) => a.createdAt - b.createdAt));
     };
     fetchData();
   }, [setDocs]);
@@ -33,7 +33,7 @@ const ListingsBody = () => {
             <div id="listings-items-container">
               {user && <CreateListingButton />}
               {docs.map((data, index) => (
-                <div key={index} onClick={() => goToListing(data.address)}>
+                <div key={index} onClick={() => goToListing(data.id)}>
                   <ListingItem data={data} />
                 </div>
               ))}

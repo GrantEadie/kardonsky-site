@@ -1,10 +1,11 @@
+import AsyncImage from "../../tools/AsyncImage";
 import "./upload.css";
 
 const UploadImageGrid = ({ urls, setCoverImage, coverImage }) => {
   return (
     <div id="upload-img-grid">
       {urls.map((url, index) => (
-        <img
+        <AsyncImage
           className={coverImage === url ? "cover-selected" : null}
           key={index}
           src={url}

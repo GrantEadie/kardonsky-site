@@ -73,8 +73,12 @@ function RouterWrapper() {
               />
             }
           />
-          <Route path="/new-listing" element={<NewListing />} />
-          <Route path="/new-blog" element={<NewBlog />} />
+          {user && (
+            <>
+              <Route path="/new-listing" element={<NewListing />} />
+              <Route path="/new-blog" element={<NewBlog />} />
+            </>
+          )}
         </Route>
       </Routes>
     </Router>

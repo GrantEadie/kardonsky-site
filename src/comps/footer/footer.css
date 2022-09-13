@@ -35,12 +35,16 @@
   margin: 0;
 }
 
+.footer-socials a {
+  color: unset;
+}
+
 .footer-socials svg:hover {
   cursor: pointer;
   transform: scale(1.2);
 }
 
-#footer-holder svg path {
+.methow-logo path {
   fill: var(--white);
 }
 

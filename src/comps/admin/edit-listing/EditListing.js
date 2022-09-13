@@ -53,8 +53,12 @@ const EditListing = () => {
   };
 
   return (
-    listing && (
-      <div id="create-listing">
+    <div id="create-listing">
+      {!listing ? (
+        <div className="loading">
+          <div className="dot-fire"></div>
+        </div>
+      ) : (
         <div id="create-listing-holder">
           <div id="create-listing-body">
             <div className="create-listing-col">
@@ -116,8 +120,8 @@ const EditListing = () => {
             Update <ArrowRight />
           </button>
         </div>
-      </div>
-    )
+      )}
+    </div>
   );
 };
 

@@ -27,6 +27,8 @@ const useStorage = (file) => {
             break;
           case "running":
             break;
+          default:
+            break;
         }
       },
       (error) => {
@@ -53,57 +55,3 @@ const useStorage = (file) => {
 };
 
 export default useStorage;
-
-const useMultipleStorage = (files) => {
-  const [progress, setProgress] = useState(0);
-  const [error, setError] = useState(null);
-  const [url, setUrl] = useState([]);
-
-  useEffect(() => {
-    // references
-    const uploadFile = (file) => {
-      const storageRef = ref(storage, file.name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
-
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log(progress);
-          setProgress(Math.round(progress));
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-          }
-        },
-        (error) => {
-          setError(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-            console.log("File available at", downloadURL);
-            setUrl(downloadURL);
-            try {
-              const docRef = await addDoc(collection(db, "images"), {
-                createdAt: serverTimestamp(),
-                url: downloadURL,
-              });
-            } catch (e) {
-              console.error("Error adding document: ", e);
-            }
-          });
-        }
-      );
-    };
-    for (const file of files) {
-      uploadFile(file);
-    }
-  }, [files]);
-
-  return { progress, url, error };
-};

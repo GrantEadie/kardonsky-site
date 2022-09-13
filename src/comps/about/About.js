@@ -1,5 +1,6 @@
 import React from "react";
 import Testimonials from "../testimonials/Testimonials";
+import AsyncImage from "../tools/AsyncImage";
 import "./about.css";
 
 const About = () => {
@@ -7,7 +8,7 @@ const About = () => {
     <div id="about-me">
       <div id="about-me-body">
         <div id="about-me-col">
-          <img
+          <AsyncImage
             id="about-me-headshot"
             src="https://firebasestorage.googleapis.com/v0/b/kardonsky-site.appspot.com/o/headshots%2Fval-headshot-vector_3.png?alt=media&token=22952274-7077-45e1-8d9b-59b464215dcf"
             alt="valerie kardonsky"

@@ -6,7 +6,15 @@ import UploadForm from "../upload/UploadMultiple";
 import UploadImageGrid from "../upload/UploadImageGrid";
 import { useNavigate } from "react-router-dom";
 
-const inputs = ["address", "city", "bedrooms", "bathrooms", "sqft", "price", "acres"];
+const inputs = [
+  "address",
+  "city",
+  "bedrooms",
+  "bathrooms",
+  "sqft",
+  "price",
+  "acres",
+];
 
 const NewListing = () => {
   const [newDocument, setNewDocument] = useState({});
@@ -29,9 +37,13 @@ const NewListing = () => {
   };
 
   const handleAddDoc = async () => {
-    const id = await addDocument("listings", { ...newDocument, images: urls });
+    const id = await addDocument("listings", {
+      ...newDocument,
+      images: urls,
+      createdAt: Date.now(),
+    });
     setDocId(id);
-    navigate(`/listings/${id}`);
+    navigate(`/listings/`);
     window.scrollTo(0, 0);
   };
 
@@ -83,7 +95,11 @@ const NewListing = () => {
                 />
               ))}
             </div>
-            <UploadImageGrid urls={urls} setCoverImage={setCoverImage} coverImage={newDocument.coverImage}/>
+            <UploadImageGrid
+              urls={urls}
+              setCoverImage={setCoverImage}
+              coverImage={newDocument.coverImage}
+            />
           </div>
         </div>
         <button className="btn-dark" onClick={() => handleAddDoc()}>

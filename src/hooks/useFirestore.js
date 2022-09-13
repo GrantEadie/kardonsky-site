@@ -32,7 +32,12 @@ export default useGetDocs;
 
 export const getStuff = async (stuff) => {
   const stuffSnapshot = await getDocs(collection(db, stuff));
-  const stuffList = stuffSnapshot.docs.map((doc) => doc.data());
+  const mapData = (doc) => {
+    const data = doc.data()
+    const id = doc.id
+    return {...data, id: id}
+  }
+  const stuffList = stuffSnapshot.docs.map((doc) => mapData(doc));
   console.log(stuffList);
   return stuffList;
 };

@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { getStuff } from "../../../hooks/useFirestore";
 import { useEffect, useState } from "react";
 import currency from "currency.js";
+import SwiperGallery from "./SwiperGallery";
+import AsyncImage from "../../tools/AsyncImage";
 
 const stats = ["bedrooms", "bathrooms", "sqft", "price"];
 
@@ -15,21 +17,29 @@ const Listing = () => {
   const { user } = useOutletContext();
   const [listing, setListing] = useState(null);
 
+  const [showGallery, setShowGallery] = useState(false);
+  const [currentFocusedImage, setCurrentFocusedImage] = useState(null);
+
+  const handleClickImage = (index) => {
+    setCurrentFocusedImage(index);
+    setShowGallery(true);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("listings");
-      setListing(gotDocs.find((data) => data.address === listingId));
+      setListing(gotDocs.find((data) => data.id === listingId));
     };
     fetchData();
   }, [setListing, listingId]);
 
-  const handleDeleteClick = (listingId) => {
+  const handleDeleteClick = () => {
     if (
       window.confirm(
         "Are you sure you want to delete this listing? This can't be undone."
       )
     ) {
-      deleteDocument("listings", listingId);
+      deleteDocument("listings", listing.id);
       navigate(`/listings/`);
       window.scrollTo(0, 0);
     }
@@ -48,6 +58,14 @@ const Listing = () => {
         </div>
       ) : (
         <div id="listing-container">
+          {showGallery && (
+            <SwiperGallery
+              urls={listing.images}
+              setShowGallery={setShowGallery}
+              currentFocusedImage={currentFocusedImage}
+              setCurrentFocusedImage={setCurrentFocusedImage}
+            />
+          )}
           <div id="listing-header-text">
             <div>
               <h1>{listing.address}</h1>
@@ -79,12 +97,15 @@ const Listing = () => {
           <div id="listing-photos">
             <div id="listing-photos-container">
               {listing.images.map((url, index) => (
-                <img
-                  className="listing-photos"
-                  src={url}
-                  alt={index}
-                  key={index}
-                />
+                <div className="listing-photo-wrap">
+                  <AsyncImage
+                    className="listing-photos"
+                    src={url}
+                    alt={index}
+                    key={index}
+                    onClick={() => handleClickImage(index)}
+                  />
+                </div>
               ))}
             </div>
           </div>

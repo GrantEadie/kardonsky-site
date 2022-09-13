@@ -9,7 +9,10 @@ font-family: 'DM Serif Display', serif; */
   --dark-red: #62373d;
   --tan: #f0d7bd75;
   --text: #0b0c1a80;
+  --swiper-theme-color: #ffffff !important;
 }
+
+
 
 html {
   background: var(--white);

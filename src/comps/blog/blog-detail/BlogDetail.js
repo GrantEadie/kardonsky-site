@@ -5,21 +5,23 @@ import { deleteDocument } from "../../../hooks/useFirestore";
 import { useNavigate } from "react-router-dom";
 import { getStuff } from "../../../hooks/useFirestore";
 import { useEffect, useState } from "react";
+import AsyncImage from "../../tools/AsyncImage";
+import SwiperGallery from "../../listings/listing/SwiperGallery";
 
 const BlogDetail = () => {
   const { blogId } = useParams();
   let navigate = useNavigate();
   const { user } = useOutletContext();
   const [post, setPost] = useState(null);
+  const [showGallery, setShowGallery] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("blog");
-      setPost(gotDocs.find((data) => data.date === blogId))
-      
+      setPost(gotDocs.find((data) => data.date === blogId));
     };
     fetchData();
-}, [setPost, blogId]);
+  }, [setPost, blogId]);
 
   const handleDeleteClick = (blogId) => {
     if (
@@ -46,6 +48,13 @@ const BlogDetail = () => {
         </div>
       ) : (
         <div id="blog-detail-container">
+          {showGallery && (
+            <SwiperGallery
+              setShowGallery={setShowGallery}
+              urls={post.images}
+              currentFocusedImage="0"
+            />
+          )}
           <div id="blog-detail-header-text">
             <div>
               <h1>{post.title}</h1>
@@ -58,11 +67,12 @@ const BlogDetail = () => {
           <div id="listing-photos">
             <div id="listing-photos-container">
               {post.images.map((url, index) => (
-                <img
+                <AsyncImage
                   className="listing-photos"
                   src={url}
                   alt={index}
                   key={index}
+                  onClick={() => setShowGallery(true)}
                 />
               ))}
             </div>

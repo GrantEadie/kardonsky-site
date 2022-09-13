@@ -4,7 +4,6 @@ import {
   InstagramLogo,
   FacebookLogo,
   TwitterLogo,
-  LinkedinLogo,
 } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +25,7 @@ const Footer = () => {
             </h3>
           ))}
         </div>
-        <MethowLogo />
+        <MethowLogo className="methow-logo"/>
         <div className="footer-items-holder">
           <div className="footer-card">
             <p>Valerie Kardonsky</p>
@@ -39,10 +38,15 @@ const Footer = () => {
           <div className="footer-card">
             <p>valerie@methowhomes.com</p>
             <div className="footer-socials">
-              <InstagramLogo size={32} weight="fill" />
-              <FacebookLogo size={32} weight="fill" />
-              <TwitterLogo size={32} weight="fill" />
-              <LinkedinLogo size={32} weight="fill" />
+              <a href="https://www.instagram.com/valeriekardonsky/">
+                <InstagramLogo size={32} />
+              </a>
+              <a href="https://www.facebook.com/MethowValleyBlueSky/">
+                <FacebookLogo size={32} />
+              </a>
+              <a href="https://www.twitter.com/methow_homes/">
+                <TwitterLogo size={32} />
+              </a>
             </div>
           </div>
         </div>
