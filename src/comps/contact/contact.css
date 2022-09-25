@@ -11,7 +11,8 @@
   min-height: 100vh;
 }
 
-.contact-socials a, .contact-socials svg {
+.contact-socials a,
+.contact-socials svg {
   margin-right: 10px;
   cursor: pointer;
   width: 30px;
@@ -109,4 +110,23 @@
 #contact-form button:hover {
   background: var(--white);
   color: var(--black);
+}
+
+@media screen and (max-width: 1000px) {
+  #contact-form {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  #contact-body {
+    padding: 100px 20px;
+  }
+
+  #contact-form form {
+    width: 100%;
+  }
+  #contact-info {
+    padding-left: unset;
+    padding-top: 40px;
+  }
 }

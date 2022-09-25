@@ -61,4 +61,17 @@
   color: black;
 }
 
+@media screen and (max-width: 1000px) {
+  #process-body {
+    margin-bottom: 100px;
+    min-width: unset;
+  }
 
+  .process-cards-holder {
+    flex-direction: column;
+  }
+
+  .process-card {
+    margin-right: unset;
+  }
+}

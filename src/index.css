@@ -12,10 +12,9 @@ font-family: 'DM Serif Display', serif; */
   --swiper-theme-color: #ffffff !important;
 }
 
-
-
 html {
   background: var(--white);
+  width: 100%;
 }
 
 body {
@@ -104,6 +103,14 @@ textarea:focus {
   background: var(--black);
 }
 
+@media screen and (max-width: 1000px) {
+  .page-header-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .no-img {
   background: transparent;
 }
@@ -163,6 +170,14 @@ textarea:focus {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.bm-overlay {
+  top: 0;
+}
+
+.bm-menu-wrap {
+  top: 0;
 }
 
 /**

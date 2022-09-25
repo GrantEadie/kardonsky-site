@@ -1,0 +1,126 @@
+#mobile-nav {
+    display: none;
+}
+
+#burger {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  z-index: 9999;
+}
+
+#header-logo {
+  font-size: 2rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  font-family: "DM Serif Display", serif;
+  letter-spacing: 1px;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+  display: none;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+  display: none;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  display: none;
+}
+
+/*
+    Sidebar wrapper styles
+    Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+    */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--black);
+  padding: 0 !important;
+  font-size: 2em;
+  color: var(--white);
+  padding: 60px 10px;
+  overflow-y: hidden !important;
+}
+
+.bm-menu a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: var(--black);
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: var(--white);
+  padding: 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Individual item */
+.bm-item {
+  display: flex !important;
+  position: relative;
+  align-items: center;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.bm-item:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.bm-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.bm-item svg {
+  margin-right: 20px;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}

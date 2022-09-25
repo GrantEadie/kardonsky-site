@@ -18,8 +18,7 @@
   color: white;
 }
 
-#hero-title {
-  /* font-weight: 900; */
+#hero-title { 
   font-size: 4rem;
 }
 
@@ -32,4 +31,38 @@
 #hero-img {
   width: 100%;
   opacity: 0.4;
+}
+
+@media screen and (max-width: 1000px) {
+  #hero-holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  #hero-text {
+    font-family: 'DM Serif Display', serif;
+    text-align: center;
+    position: absolute;
+    color: white;
+  }
+  
+  #hero-title {
+    font-size: 3rem;
+    padding: 0 30px;
+  }
+  
+  #hero-desc {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+  }
+  
+  #hero-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 }

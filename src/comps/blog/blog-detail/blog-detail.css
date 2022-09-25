@@ -106,3 +106,17 @@
 .listing-admin button {
   margin-right: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+  #blog-detail {
+    padding: 20px;
+  }
+
+  #listing-photos-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+    margin-bottom: 40px;
+  }
+}

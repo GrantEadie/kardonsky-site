@@ -1,3 +1,12 @@
+@media screen and (max-width: 1000px) {
+  #mobile-nav {
+    display: block !important;
+  }
+  #nav-bar {
+    display: none !important;
+  }
+}
+
 .nav-black a {
   color: black !important;
 }
@@ -23,7 +32,7 @@
   width: 100%;
   z-index: 999;
   background: var(--black);
-  font-size: .85rem;
+  font-size: 0.85rem;
 }
 
 .nav-bar-home {
@@ -42,9 +51,8 @@
 }
 
 .nav-logo {
-  
   padding: 1rem 2rem;
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
   letter-spacing: 1px;
 }
 
@@ -58,7 +66,7 @@
   color: white;
   display: block;
   transition: all 0.2s ease;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .active {
