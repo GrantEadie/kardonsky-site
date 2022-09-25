@@ -29,7 +29,7 @@ const NewBlog = () => {
   };
 
   const handleAddDoc = async () => {
-    const id = await addDocument("blog", { ...newDocument, images: urls });
+    const {id} = await addDocument("blog", { ...newDocument, images: urls });
     setDocId(id);
     navigate(`/blog/${id}`);
     window.scrollTo(0, 0);

@@ -43,6 +43,14 @@
   white-space: pre-wrap;
 }
 
+#blog-detail-header-text a {
+  color: blue;
+}
+
+#blog-detail-header-text a:hover {
+  opacity: 0.8;
+}
+
 #blog-detail-header-text div {
   width: 100%;
   padding-bottom: 20px;

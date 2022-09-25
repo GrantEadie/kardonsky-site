@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { getStuff } from "../../../hooks/useFirestore";
 import { useEffect, useState } from "react";
 import SwiperGallery from "../../listings/listing/SwiperGallery";
+import FindLinks from "./FindLinks";
 
 const BlogDetail = () => {
   const { blogId } = useParams();
@@ -17,7 +18,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("blog");
-      setPost(gotDocs.find((data) => data.date === blogId));
+      setPost(gotDocs.find((data) => data.id === blogId));
     };
     fetchData();
   }, [setPost, blogId]);
@@ -35,7 +36,7 @@ const BlogDetail = () => {
   };
 
   const handleClickEdit = () => {
-    navigate(`/listings/edit/${blogId}`);
+    navigate(`/blog/edit/${blogId}`);
     window.scrollTo(0, 0);
   };
 
@@ -60,7 +61,7 @@ const BlogDetail = () => {
               <h2>{post.date} / Valerie Kardonsky</h2>
             </div>
             <div>
-              <h3>{post.body}</h3>
+              <h3><FindLinks text={post.body}/></h3>
             </div>
           </div>
           <div id="listing-photos">

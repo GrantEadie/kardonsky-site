@@ -38,7 +38,6 @@ export const getStuff = async (stuff) => {
     return {...data, id: id}
   }
   const stuffList = stuffSnapshot.docs.map((doc) => mapData(doc));
-  console.log(stuffList);
   return stuffList;
 };
 
@@ -47,7 +46,7 @@ export const addDocument = async (category, doc) => {
     const docRef = await addDoc(collection(db, category), {
       ...doc,
     });
-    return docRef.id;
+    return docRef;
   } catch (e) {
     console.log("Error adding document: ", e);
   }
