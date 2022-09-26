@@ -17,6 +17,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin: 10px 0;
+  position: relative;
 }
 .testimonial-card h2 {
   font-size: 1rem;
@@ -37,4 +38,22 @@
 
 .five-stars svg {
   margin-right: 2px;
+}
+
+.delete-testimonial {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.delete-testimonial svg {
+  padding: 0;
+  margin: 0;
+}
+
+.delete-testimonial:hover {
+  background: black;
+  color: white;
 }

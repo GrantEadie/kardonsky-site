@@ -17,7 +17,8 @@ import NewListing from "./admin/new-listing/NewListing";
 import { signOut } from "firebase/auth";
 import BlogDetail from "./blog/blog-detail/BlogDetail";
 import NewBlog from "./admin/new-blog/NewBlog";
-import EditBlog from "./admin/edit-blog/EditBlog"
+import EditBlog from "./admin/edit-blog/EditBlog";
+import NewTestimonial from "./admin/new-testimonial/NewTestimonial";
 
 function RouterWrapper() {
   const [user, setUser] = useState("");
@@ -65,6 +66,7 @@ function RouterWrapper() {
             <Route path="buyers" element={<Buyers />} />
             <Route path="sellers" element={<Sellers />} />
           </Route>
+          <Route path="/new-testimonial" element={<NewTestimonial />} />
           <Route
             path="/admin"
             element={

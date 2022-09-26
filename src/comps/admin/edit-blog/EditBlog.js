@@ -39,8 +39,6 @@ const EditBlog = () => {
     window.scrollTo(0, 0);
   };
 
-  console.log(blog);
-
   return (
     <div id="create-listing">
       {!blog ? (
