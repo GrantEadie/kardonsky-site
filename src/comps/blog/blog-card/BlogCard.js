@@ -1,4 +1,5 @@
 import "./blog-card.css";
+import FindLinks from "../blog-detail/FindLinks";
 
 const BlogCard = ({ post }) => {
   const setBlogBodyLength = (text) => {
@@ -13,15 +14,13 @@ const BlogCard = ({ post }) => {
   const openPhoto = () => {};
   return (
     <div className="blog-card">
-      <img
-        src={post.images}
-        alt={post.title}
-        onClick={() => openPhoto()}
-      />
+      <img src={post.images} alt={post.title} onClick={() => openPhoto()} />
       <div>
         <h1>{post.title}</h1>
         <h2>{post.date}</h2>
-        <p>{setBlogBodyLength(post.body)}...</p>
+        <p>
+          <FindLinks text={setBlogBodyLength(post.body)} />
+        </p>
       </div>
     </div>
   );
