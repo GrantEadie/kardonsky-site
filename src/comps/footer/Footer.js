@@ -7,7 +7,7 @@ import {
 } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 
-const routes = ["about-me", "the-process", "blog", "listings", "contact"];
+const routes = ["about-me", "the-process", "blog", "listings", "contact", "admin"];
 
 const Footer = () => {
   const navigate = useNavigate();

@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 function Login({ user, setUser, handleLogout }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [err, setErr] = useState("");
   const navigate = useNavigate();
 
   const auth = getAuth();
@@ -21,15 +22,16 @@ function Login({ user, setUser, handleLogout }) {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("successful login");
+        setTimeout(() => {
+          navigate("/");
+        }, "2000");
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setErr("incorrect password or email");
         console.log(errorCode, errorMessage);
       });
-    setTimeout(() => {
-      navigate("/");
-    }, "2000");
   };
 
   return (
@@ -62,7 +64,9 @@ function Login({ user, setUser, handleLogout }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button onClick={() => handleLogin()}>Login</button>
-              <span id="logged-out">you are currently logged out.</span>
+              <span id="logged-out">
+                {err.length ? err : "you are currently logged out."}
+              </span>
             </>
           )}
         </div>
