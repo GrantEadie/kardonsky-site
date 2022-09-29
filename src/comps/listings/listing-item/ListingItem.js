@@ -19,6 +19,7 @@ const ListingItem = ({ data }) => {
     coverImage,
     acres,
     images,
+    sold
   } = data;
   return (
     <div className="listing-item-holder">
@@ -53,7 +54,7 @@ const ListingItem = ({ data }) => {
           </div>
         </div>
         <div className="listing-price">
-          <div className="listing-activity">SOLD</div>
+          <div className="listing-activity">{sold ? 'SOLD' : 'ACTIVE'}</div>
           {currency(price, { fromCents: true, precision: 0 }).format()}
         </div>
       </div>

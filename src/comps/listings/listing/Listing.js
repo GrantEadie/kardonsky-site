@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import currency from "currency.js";
 import SwiperGallery from "./SwiperGallery";
 
-const stats = ["bedrooms", "bathrooms", "sqft", "price"];
+const stats = ["bedrooms", "bathrooms", "sqft", "price", "acres"];
 
 const Listing = () => {
   const { listingId } = useParams();

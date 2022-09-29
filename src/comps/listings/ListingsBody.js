@@ -14,7 +14,7 @@ const ListingsBody = () => {
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("listings");
-      setDocs(gotDocs.sort((a, b) => a.createdAt - b.createdAt));
+      setDocs(gotDocs.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
     };
     fetchData();
   }, [setDocs]);

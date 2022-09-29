@@ -12,7 +12,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       const gotDocs = await getStuff("blog");
-      setDocs(gotDocs);
+      setDocs(gotDocs.sort((a, b) => new Date(b.date) - new Date(a.date)));
     };
     fetchData();
   }, [setDocs]);
