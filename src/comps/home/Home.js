@@ -12,7 +12,7 @@ const Home = () => {
         />
         <div id="hero-text">
           <div id="hero-desc">Methow Valley Real Estate Broker</div>
-          <div id="hero-title">Live your Methow Dream</div>
+          <div id="hero-title">Live Your Methow Dream</div>
         </div>
       </div>
       <ListingsBody />
