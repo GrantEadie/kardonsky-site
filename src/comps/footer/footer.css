@@ -87,3 +87,14 @@
     margin-top: 20px;
   }
 }
+
+.copyright-text {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.copyright-text a {
+  color: grey;
+  text-decoration: underline;
+}

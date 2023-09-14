@@ -1,13 +1,16 @@
 import "./footer.css";
 import { ReactComponent as MethowLogo } from "../../svg/methow-bluesky-logo.svg";
-import {
-  InstagramLogo,
-  FacebookLogo,
-  TwitterLogo,
-} from "phosphor-react";
+import { InstagramLogo, FacebookLogo, TwitterLogo } from "phosphor-react";
 import { useNavigate } from "react-router-dom";
 
-const routes = ["about-me", "the-process", "blog", "listings", "contact", "admin"];
+const routes = [
+  "about-me",
+  "the-process",
+  "blog",
+  "listings",
+  "contact",
+  "admin",
+];
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -25,7 +28,7 @@ const Footer = () => {
             </h3>
           ))}
         </div>
-        <MethowLogo className="methow-logo"/>
+        <MethowLogo className="methow-logo" />
         <div className="footer-items-holder">
           <div className="footer-card">
             <p>Valerie Kardonsky</p>
@@ -50,6 +53,12 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="copyright-text">
+        © 2023 Copyright.{" "}
+        <a href="https://www.methowvalleyproperties.com/wp-content/uploads/2019/09/DMCA-Notice.pdf">
+          DMCA Notice
+        </a>
       </div>
     </div>
   );
